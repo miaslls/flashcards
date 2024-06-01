@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const diceButton = document.getElementById('diceButton');
   const verbImage = document.getElementById('verbImage');
   const hideImagesCheckbox = document.getElementById('hideImages');
-  const hideVerbsCheckbox = document.getElementById('hideVerbs');
+  const hideVerbCheckbox = document.getElementById('hideVerb');
   const randomVerbsCheckbox = document.getElementById('randomVerbs');
 
   let currentVerb = '';
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     currentVerb = verbs[currentIndex];
 
-    if (!hideVerbsCheckbox.checked) {
+    if (!hideVerbCheckbox.checked) {
       diceButton.textContent = currentVerb;
     } else {
       diceButton.textContent = '???';
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     verbImage.style.display = hideImagesCheckbox.checked ? 'none' : 'block';
   });
 
-  hideVerbsCheckbox.addEventListener('change', () => {
-    diceButton.textContent = hideVerbsCheckbox.checked ? '???' : currentVerb;
+  hideVerbCheckbox.addEventListener('change', () => {
+    diceButton.textContent = hideVerbCheckbox.checked ? '???' : currentVerb;
   });
 });
